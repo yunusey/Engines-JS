@@ -1,3 +1,6 @@
+// For more details, you may want to look @https://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80
+// For video tutorial, you may want to look @https://www.youtube.com/watch?v=uH4trBNn540
+
 let isPaused = false;
 
 let piString = Math.PI.toString();
@@ -10,6 +13,10 @@ let canvasWidth = 400, canvasHeight = 400;
 
 let divs;
 
+let animationSpeed = 1000;
+// It can be thought as drawings per frames (DPF :D)
+// To increase it so much may cause animation to slow down
+
 function setup(){
   createCanvas(canvasWidth, canvasHeight);  
   background(0);
@@ -19,7 +26,7 @@ function setup(){
 
 function draw() {
   if(isPaused) return;
-  for(let turn = 0; turn < 1000; turn++){
+  for(let turn = 0; turn < animationSpeed; turn++){
     background(0);
     let div = (iterations * 2 + 3) * (iterations % 2 == 0 ? -1 : 1);
     piVar += 4 / div;

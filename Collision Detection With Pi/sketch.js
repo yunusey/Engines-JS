@@ -1,3 +1,6 @@
+// For more details, you may want to look @https://www.youtube.com/watch?v=jsYwFizhncE
+// For video tutorial, you may want to look @https://www.youtube.com/watch?v=PoW8g67XNxA
+
 let block1, block2;
 let ground, wall;
 
@@ -7,18 +10,12 @@ let mass_ratio = 1000000000000;
 let digits = Math.log10(Math.sqrt(mass_ratio)) + 1;
 let timeSteps = 1000000;
 
-let isPaused = false, isFinished = false;
+// For more details, you may want to look Euler's algorithm @https://en.wikipedia.org/wiki/Euler_method#:~:text=The%20Euler%20method%20is%20a,proportional%20to%20the%20step%20size.
 
-let massInput, velInput;
+let isPaused = false, isFinished = false;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  if(massInput == null){
-    massInput = createInput(); velInput = createInput();
-    massInput.position(windowWidth/2 - massInput.size().width/2, 450);
-    velInput.position(windowWidth/2 - massInput.size().width/2, 480);
-  }
-  massInput.hide(); velInput.hide();
   collisionCount = 0;
   wall = new Wall(20, 300, 20, 0);
   ground = new Wall(20, 300, windowWidth, 300);
