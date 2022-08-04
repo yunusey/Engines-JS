@@ -1,4 +1,5 @@
-let radius = 40;
+// For details, you may want to look @https://en.wikipedia.org/wiki/Approximations_of_%CF%80
+// For video tutorial, you may want to look @https://www.youtube.com/watch?v=5cNnf_7e92Q
 
 let rx, ry;
 
@@ -9,6 +10,11 @@ let isPaused = false;
 let bestRatioFound = 0, theCountFound = 0;
 
 let piString = Math.PI.toString();
+
+let animationSpeed = 10000;
+// In each frame you will be placing amount of animationSpeed(variable)
+// At that point, to increase it so much may cause different results.
+
 
 function setup(){
   createCanvas(405, 500);  
@@ -24,7 +30,7 @@ function setup(){
 
 function draw() {
   if(isPaused) return;
-  for(let turn = 0; turn < 10000; turn++){
+  for(let turn = 0; turn < animationSpeed; turn++){
     let x = random(0, 2 * rx);
     let y = random(0, 2 * ry);
     let distance = Math.sqrt(Math.pow(Math.abs(x - 200), 2) + Math.pow(Math.abs(y - 200), 2));
