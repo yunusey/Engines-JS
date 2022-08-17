@@ -30,12 +30,13 @@ function batmanFunction(x){
 function circleFunction(x){
     // What we do here is to say x is cos(a) and for that cos which sin(a)'s can be pointed.
     // And just because of that x values should be between [-1, 1].
-    // Unless it's return - don't do any single thing.
+    // Unless it returns - doesn't do any single thing.
     if(x <= -1 || x >= 1){
         return [];
     }
-    borderXMinus = -1, borderXPlus = 1;
-    borderYMinus = -1, borderYPlus = 1;
+    // The best results can be found using these lines because it won't increase x!
+    // borderXMinus = -1, borderXPlus = 1;
+    // borderYMinus = -1, borderYPlus = 1;
     let y = sqrt(1 - x * x); 
     return [y, -y];
 }

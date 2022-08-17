@@ -3,21 +3,32 @@ let nonDefined = "None Defined";
 
 let xIncrement = 0.001, xDecrement = -0.001;
 // In case of not wanting slides, you have to specify borders!
-// In case of wanting slides, borders should be specified as nonDefined (declared above).
+// In case of wanting slides, borders should be specified - initialized as nonDefined (declared above).
 // In case of not wanting borders, you should make them nonDefined!
-let borderXMinus = nonDefined, borderXPlus = nonDefined, borderYMinus = nonDefined, borderYPlus = nonDefined;
+// An example : borderXMinus = nonDefined;
+// So it means that -x will go to infinite!
+let borderXMinus = -10, borderXPlus = 10, borderYMinus = -5, borderYPlus = 5;
 
-// points per frame
-let animSpeed = 1000;
+// points - xs per frame
+let animSpeed = 10;
 
-// Main function is fx. So, the only function sketch.js uses is this. Don't try to delete it!
-// You may want to look at examples, examples.js is for that...
-// An important note: You should return a list - array - vector.
-// Meaning, for each x you can have multiple values(y).
+// You may want to look at examples, examples.js is just for that...
+// An important note: You should return a list - array - vector in your functions.
+// Meaning, for each x you can have multiple values(y)!
+
 function fx(x){
-     return batmanFunction(x);
-    // return circleFunction(x);
-    // return sinFunction(x);
-    // return [x * x * x];
-    // return [3 * x];
+    return batmanFunction(x);
 }
+
+function fx2(x){
+    return sinFunction(x);
+}
+
+function fx3(x){
+    return [x * x * x];
+}
+
+push(circleFunction, 0, 255, 0);
+push(fx, 255, 0, 0);
+push(fx2, 255, 0, 255);
+push(fx3, 0, 0, 255);
